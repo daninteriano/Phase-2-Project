@@ -24,22 +24,11 @@ export default function Products() {
         }
         getProducts();
     }, []);
-
+    // here were making the loading function for when products are rendering
     const Loading = () => {
         return (
             <div>
-                <div className="col-md-3">
-                    <Skeleton height={350}/>
-                </div>
-                <div className="col-md-3">
-                    <Skeleton height={350}/>
-                </div>
-                <div className="col-md-3">
-                    <Skeleton height={350}/>
-                </div>
-                <div className="col-md-3">
-                    <Skeleton height={350}/>
-                </div>
+                <h2>Loading...</h2>
             </div>
         ); 
     }

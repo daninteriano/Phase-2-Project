@@ -19,23 +19,6 @@ const Item = () => {
         getProduct();
     }, []);
 
-    const Loading = () => {
-        return (
-            <div>
-                <div className="col-md-6">
-                    <Skeleton height={400} />
-                </div>
-                <div className="col-md-6" style={{lineHeight:4}}>
-                    <Skeleton height={50} width={300} />
-                    <Skeleton height={75} />
-                    <Skeleton height={25} width={150}/>
-                    <Skeleton height={50}/>
-                    <Skeleton height={150} width={100} stlye={{marginLeft:6}}/>
-                </div>
-            </div>
-        )
-    }
-
     const ShowProduct = () => {
         return (
             <div>
@@ -70,7 +53,7 @@ const Item = () => {
         <div>
             <div className="container py-5">
                 <div className="row py-4">
-                    {loading ? <Loading /> : <ShowProduct />}
+                     <ShowProduct />
                 </div>
             </div>
         </div>
