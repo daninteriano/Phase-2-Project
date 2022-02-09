@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom';
 import Products from './Products';
-import Skeleton from 'react-loading-skeleton';
+import { useCart } from 'react-use-cart';
 
 const Item = () => {
     const { id } = useParams();
     const [item, setItem] = useState([]);
     const [loading, setLoading] = useState(false);
+    const { addItem } = useCart();
 
     useEffect(() => {
         const getProduct = async () => {
@@ -39,7 +40,8 @@ const Item = () => {
                         ${item.price}
                     </h3>
                     <p className="lead">{item.description}</p>
-                    <button className="btn btn-outline-dark px-4 py-2">
+                    <button className="btn btn-outline-dark px-4 py-2" 
+                    onClick={() => addItem(props.item)}>
                         Add to Cart
                     </button>
                     <NavLink to="/cart" className="btn btn-dark ms-2 px-3 py-2">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Skeleton from 'react-loading-skeleton';
 import { NavLink } from 'react-router-dom';
 
 export default function Products() {
@@ -39,13 +38,14 @@ export default function Products() {
 
     const ShowProducts = () => {
         return (
-            <div>
+            <div> 
+                {/* here we have the different filter options for the products */}
                 <div className="buttons d-flex justify-content-center mb-5 pb-5">
-                    <button className="btn btn-outline-dark me-2" onClick={() =>setFilter(data)}>All</button>
+                    <button className="btn btn-outline-dark me-2" onClick={() => setFilter(data)}>All</button>
                     <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
                     <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("women's clothing")}>Women's Clothing</button>
-                    <button className="btn btn-outline-dark me-2"onClick={() => filterProduct("jewelery")}>Jewelery</button>
-                    <button className="btn btn-outline-dark me-2"onClick={() => filterProduct("electronics")}>Electronic</button>
+                    <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
+                    <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("electronics")}>Electronic</button>
                 </div>
                 {filter.map((product) => {
                     return (
@@ -57,6 +57,7 @@ export default function Products() {
                                         <p className="card-text lead fw-bold">
                                             ${product.price}
                                         </p>
+                                        {/* buy now button */}
                                         <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">Buy Now</NavLink>
                                     </div>
                             </div>
@@ -77,7 +78,7 @@ export default function Products() {
                         <hr />
                     </div>
                 </div>
-                <div className="row d-flex justify-content-center">
+                <div className="row d-flex justify-content-center   `">
                     {loading ? <Loading /> : <ShowProducts />}
                 </div>
             </div>
