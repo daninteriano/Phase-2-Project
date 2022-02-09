@@ -8,6 +8,7 @@ import { About } from './components/About';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
 import { useState } from "react";
+import { CartProvider } from "react-use-cart"
 
 function App() {
 
@@ -19,6 +20,7 @@ function addItemtoCart(product){
 
   return (
     <div>
+      <CartProvider>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -27,11 +29,12 @@ function addItemtoCart(product){
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/products/:id" component={Item} />
         <Route exact path="/cart" component={Cart} />
-        <Home addItem={addItemtoCart}/>
+        <Home />
         <About />
         <Contact />
         <Cart />
       </Switch>
+      </CartProvider>
     </div>
   )
 }

@@ -7,15 +7,12 @@ import { useCart } from 'react-use-cart';
 const Item = () => {
     const { id } = useParams();
     const [item, setItem] = useState([]);
-    const [loading, setLoading] = useState(false);
     const { addItem } = useCart();
 
     useEffect(() => {
         const getProduct = async () => {
-            setLoading(true);
             const response = await fetch(`https://fakestoreapi.com/products/${id}`);
             setItem(await response.json());
-            setLoading(false);
         }
         getProduct();
     }, []);
@@ -41,7 +38,7 @@ const Item = () => {
                     </h3>
                     <p className="lead">{item.description}</p>
                     <button className="btn btn-outline-dark px-4 py-2" 
-                    onClick={() => addItem(props.item)}>
+                    onClick={() => addItem(item)}>
                         Add to Cart
                     </button>
                     <NavLink to="/cart" className="btn btn-dark ms-2 px-3 py-2">

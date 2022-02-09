@@ -11,7 +11,20 @@ export default function Cart() {
         <section className='py-4 container'>
             <div className='row justify-content-center'>
                 <div className='col-12'>
-                    <h5>Cart ({totalUniqueItems})</h5>
+                    <h5>Cart ({totalUniqueItems}) total Items: ({totalItems})</h5>
+                    <table className='table table-light table-hover m-0'>
+                        {items.map((thing, index) => {
+                            <tr key={index}>
+                                <td>
+                                    <img src={thing.img} style={{height: "6rem"}}/>
+                                </td>
+                                <td>{thing.title}</td>
+                                <td>{thing.price}</td>
+                                <td>Quantity: ({thing.quantity})</td>
+                                
+                            </tr>
+                        })}
+                    </table>
                 </div>
             </div>
         </section>
