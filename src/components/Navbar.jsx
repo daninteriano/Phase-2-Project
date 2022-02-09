@@ -1,7 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useCart } from "react-use-cart";
 
 export default function Navbar() {
+    const {totalItems} = useCart();
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
@@ -30,7 +33,7 @@ export default function Navbar() {
                             {/* top right-side buttons for cart(maybe login/register)*/}
                             <button className="btn">
                                 <NavLink to="/cart" className="btn btn-outline-dark ms-2">
-                                    <i className="fa fa-shopping-cart me-1"></i>Cart (0)</NavLink>
+                                    <i className="fa fa-shopping-cart me-1"></i>Cart ({totalItems})</NavLink>
                             </button> 
                         </div>
                     </div>

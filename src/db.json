@@ -1,0 +1,10 @@
+{
+    "messages": [
+        {
+            "id": 1,
+            "name": "Jane Doe",
+            "email": "name@example.com",
+            "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        }
+    ]
+}
