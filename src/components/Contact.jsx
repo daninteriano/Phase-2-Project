@@ -30,8 +30,7 @@ export default function Contact() {
     }
 
     return (
-        <div className='container'>
-
+        <div className='container '>
             <form onSubmit={handleSubmit} className="container d-flex justify-content-center rounded bg-info border border-info h-100 w-100 my-5 " >
                 <h2>Contact Us</h2>
                 <div class="mb-3 px-4">
@@ -45,7 +44,7 @@ export default function Contact() {
                     <input type="email" class="form-control" placeholder="name@example.com" onChange={handleChange} />
                 </div>
                 <div class="mb-3 px-4 w-100">
-                    <label for="exampleFormControlTextarea1" class="form-label">
+                    <label for="textFormControlInput" class="form-label">
                         Message
                     </label>
                     <textarea class="form-control " rows="3" onChange={handleChange} ></textarea>
