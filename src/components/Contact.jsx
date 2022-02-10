@@ -14,8 +14,6 @@ export default function Contact() {
     }
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(event)
-        debugger
         fetch("http://localhost:3000/messages", {
             method: "POST",
             headers: {
@@ -37,11 +35,11 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="container d-flex justify-content-center rounded bg-info border border-info h-100 w-100 my-5 " >
                 <h2>Contact Us</h2>
                 <div class="mb-3 px-4">
-                    <label for="exampleFormControlInput1" class="form-label pt-2">
+                    <label for="nameFormControlInput" class="form-label pt-2">
                         Full Name
                     </label>
                     <input type="text" class="form-control" placeholder="Full Name" onChange={handleChange} />
-                    <label for="exampleFormControlInput1" class="form-label pt-2">
+                    <label for="emailFormControlInput" class="form-label pt-2">
                         Email address
                     </label>
                     <input type="email" class="form-control" placeholder="name@example.com" onChange={handleChange} />
@@ -50,7 +48,7 @@ export default function Contact() {
                     <label for="exampleFormControlTextarea1" class="form-label">
                         Message
                     </label>
-                    <textarea class="form-control " rows="3" onChange={handleChange}></textarea>
+                    <textarea class="form-control " rows="3" onChange={handleChange} ></textarea>
                     <button type="submit" class="btn btn-primary px-3 mt-3">
                         Submit
                     </button>

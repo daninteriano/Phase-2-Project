@@ -15,7 +15,6 @@ export default function Products() {
                 setData(await response.clone().json());
                 setFilter(await response.json());
                 setLoading(false);
-                console.log(filter)
             }
             return () => {
                 componentMounted = false;
@@ -49,7 +48,7 @@ export default function Products() {
                 </div>
                 {filter.map((product) => {
                     return (
-                        <div className='d-flex flex-row'>
+                        <div key={product.id} className='d-flex flex-row '>
                         <div className="col-md-3 mb-4 d-flex flex-row rounded ">
                             <div className="card h-100 text-center p-4" key={product.id}>
                                 <img src={product.image} className="card-img-top " alt={product.title} height="250px"/>
