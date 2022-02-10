@@ -7,16 +7,10 @@ import Item from './components/Item';
 import { About } from './components/About';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
-import { useState } from "react";
+
 import { CartProvider } from "react-use-cart"
 
 function App() {
-
-const [cartItems, setCartItems] = useState([]);
-
-function addItemtoCart(product){
-  setCartItems([...cartItems, product])
-}
 
   return (
     <div>

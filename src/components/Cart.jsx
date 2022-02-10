@@ -20,7 +20,7 @@ export default function Cart() {
                                 return (
                                 <tr key={index}>
                                     <td>
-                                        <img src={thing.image} style={{ height: "6rem" }} />
+                                        <img src={thing.image} alt="shopping item"style={{ height: "6rem" }} />
                                     </td>
                                     <td>{thing.title}</td>
                                     <td>{thing.price}</td>

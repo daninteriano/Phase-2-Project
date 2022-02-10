@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom';
-import Products from './Products';
 import { useCart } from 'react-use-cart';
 
 const Item = () => {
@@ -15,7 +14,7 @@ const Item = () => {
             setItem(await response.json());
         }
         getProduct();
-    }, []);
+    }, );
 
     const ShowProduct = () => {
         return (

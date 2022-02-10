@@ -7,13 +7,15 @@ export default function Contact() {
         message: ""
     });
 
-    function handleChange(event){
+    function handleChange(event) {
         setFormData({
             ...formData, [event.target.name]: event.target.value,
-        })
+        });
     }
-    function handleSubmit(event){
+    function handleSubmit(event) {
         event.preventDefault();
+        console.log(event)
+        debugger
         fetch("http://localhost:3000/messages", {
             method: "POST",
             headers: {
@@ -25,27 +27,35 @@ export default function Contact() {
                 "message": formData.message
             }
         })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
+            .then((res) => res.json())
+            .then((data) => console.log(data))
     }
 
     return (
-        <form id="contactpg" onSubmit={handleSubmit}>
-            <div class="mb-3" >
-                <h2>Contant Us</h2>
-                <h4>We want to hear from you!</h4>
-                <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" value={formData.name} onChange={handleChange} placeholder="FirstAnd LastName" />
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" value={formData.email} onChange={handleChange} placeholder="name@example.com" />
-            </div>
-            <div class="mb-3 " width="50px">
-                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                <textarea class="form-control" rows="3" value={formData.message} onChange={handleChange}></textarea>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">Submit</button>
-            </div>
-        </form>
+        <div className='container'>
+
+            <form onSubmit={handleSubmit} className="container d-flex justify-content-center rounded bg-info border border-info h-100 w-100 my-5 " >
+                <h2>Contact Us</h2>
+                <div class="mb-3 px-4">
+                    <label for="exampleFormControlInput1" class="form-label pt-2">
+                        Full Name
+                    </label>
+                    <input type="text" class="form-control" placeholder="Full Name" onChange={handleChange} />
+                    <label for="exampleFormControlInput1" class="form-label pt-2">
+                        Email address
+                    </label>
+                    <input type="email" class="form-control" placeholder="name@example.com" onChange={handleChange} />
+                </div>
+                <div class="mb-3 px-4 w-100">
+                    <label for="exampleFormControlTextarea1" class="form-label">
+                        Message
+                    </label>
+                    <textarea class="form-control " rows="3" onChange={handleChange}></textarea>
+                    <button type="submit" class="btn btn-primary px-3 mt-3">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
     )
 }
