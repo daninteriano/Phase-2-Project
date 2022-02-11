@@ -1,19 +1,19 @@
 {
-  "posts": [
+  "messages": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Jane Doe",
+      "email": "name@example.com",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2
+    },
+    {
+      "name": "Daniel Interiano",
+      "email": "daninteriano@yahoo.com",
+      "message": "hello world",
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
