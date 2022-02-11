@@ -37,9 +37,9 @@ export default function Products() {
 
     const ShowProducts = () => {
         return (
-            <div className='container bg-warning bg-opacity-50'> 
+            <div className='container bg-warning bg-opacity-50 '> 
                 {/* here we have the different filter options for the products */}
-                <div className="buttons d-flex justify-content-center mb-5 pb-5">
+                <div className="buttons d-flex flex-row justify-content-center mb-5 pb-5">
                     <button className="btn btn-outline-dark me-2" onClick={() => setFilter(data)}>All</button>
                     <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
                     <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("women's clothing")}>Women's Clothing</button>
@@ -50,7 +50,7 @@ export default function Products() {
                     return (
                         <div key={product.id} className='d-flex flex-row '>
                         <div className="col-md-3 mb-4 d-flex flex-row rounded ">
-                            <div className="card h-100 text-center p-4" key={product.id}>
+                            <div className="card h-100 text-center p-4 bg-warning" key={product.id}>
                                 <img src={product.image} className="card-img-top " alt={product.title} height="250px"/>
                                     <div className="card-body bg-warning bg-opacity-50">
                                         <h5 className="card-title mb-0">{product.title.substring(0,12)}...</h5>
