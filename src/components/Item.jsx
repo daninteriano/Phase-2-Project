@@ -7,6 +7,7 @@ const Item = () => {
     const { id } = useParams();
     const [item, setItem] = useState([]);
     const { addItem } = useCart();
+    const [click, setClick] = useState(true)
 
     useEffect(() => {
         const getProduct = async () => {
@@ -19,6 +20,7 @@ const Item = () => {
     const ShowProduct = () => {
         return (
             <div>
+                
                 <div className="col-md-6">
                     <img src={item.image} alt={item.title}
                         height="400px" width="400px" />

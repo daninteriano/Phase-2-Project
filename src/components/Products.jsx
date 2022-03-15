@@ -6,7 +6,7 @@ export default function Products() {
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
     let componentMounted = true;
-
+    // const [search, setsearch] = useState('');
     useEffect(() => {
         const getProducts = async () => {
             setLoading(true);
@@ -35,6 +35,13 @@ export default function Products() {
         setFilter(updatedList);
     }
 
+//    function handleSearchChange(event){
+//         //take the input and filter out the items on the DOM
+//         setsearch(event.target.value);
+//         //using state to filter out card components
+//    }
+//    const searchFilter = filter.filter((item) => item.title.includes(search))
+
     const ShowProducts = () => {
         return (
             <div className='container bg-warning bg-opacity-50 rounded border border-warning border-4'> 
@@ -47,7 +54,9 @@ export default function Products() {
                     <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("electronics")}>Electronic</button>
                 
                 </div>
-                <div className='container '>
+                <div className='container d-flex flex-row flex-wrap'>
+                    <label for="search bar"></label>
+                    {/* <input value={search} onChange={handleSearchChange}></input> */}
                 {filter.map((product) => {
                     return (
                         
